@@ -1,0 +1,37 @@
+{
+	"name": "@barelyhuman/expo-serve",
+	"version": "1.0.0",
+	"description": "single file custom implementation of expo self hosted manifest server",
+	"keywords": [],
+	"license": "MIT",
+	"author": "",
+	"type": "module",
+	"main": "dist/cli.js",
+	"module": "dist/cli.js",
+	"scripts": {
+		"build": "ncc build src/cli.js -m",
+		"test": "xo --fix",
+		"prepublishOnly": "npm run build"
+	},
+	"xo": {
+		"prettier": true
+	},
+	"prettier": {
+		"bracketSpacing": false,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"useTabs": true
+	},
+	"dependencies": {
+		"express": "^4.17.2"
+	},
+	"devDependencies": {
+		"@vercel/ncc": "^0.33.1",
+		"prettier": "^2.5.1",
+		"xo": "^0.47.0"
+	},
+	"engines": {
+		"node": ">=12"
+	}
+}
