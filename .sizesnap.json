@@ -1,0 +1,12 @@
+{
+  "dist/index.js": {
+    "size": "617.21KB",
+    "brotli": "158.3KB",
+    "gzip": "244.03KB"
+  },
+  "dist/package.json": {
+    "size": "23B",
+    "brotli": "27B",
+    "gzip": "43B"
+  }
+}
