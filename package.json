@@ -3,15 +3,18 @@
 	"version": "1.0.0",
 	"description": "single file custom implementation of expo self hosted manifest server",
 	"keywords": [],
+	"repository": "git@github.com:barelyhuman/expo-serve.git",
 	"license": "MIT",
-	"author": "",
+	"author": "Reaper <ahoy@barelyhuman.dev>",
 	"type": "module",
-	"main": "dist/cli.js",
-	"module": "dist/cli.js",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
 	"scripts": {
 		"build": "ncc build src/cli.js -m",
-		"test": "xo --fix",
-		"prepublishOnly": "npm run build"
+		"postbuild": "npm run size table",
+		"fix": "xo --fix",
+		"prepublishOnly": "npm run build",
+		"size": "sizesnap"
 	},
 	"xo": {
 		"prettier": true
@@ -24,14 +27,21 @@
 		"useTabs": true
 	},
 	"dependencies": {
-		"express": "^4.17.2"
+		"express": "^4.17.2",
+		"kleur": "^4.1.4"
 	},
 	"devDependencies": {
 		"@vercel/ncc": "^0.33.1",
 		"prettier": "^2.5.1",
+		"sizesnap": "^0.1.0",
 		"xo": "^0.47.0"
 	},
 	"engines": {
 		"node": ">=12"
+	},
+	"sizesnap": {
+		"files": [
+			"dist/*"
+		]
 	}
 }
